@@ -1,0 +1,58 @@
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+import TodoForm from './TodoForm';
+import iconMap from '../utility/IconMapping';
+
+
+function Todo( {todo, toggleDone, updateTodo}){
+    const [isEditing, setIsEditing] = useState(false);
+
+    const handleDoubleClick = () => {
+        toggleDone(todo.id);
+    }
+    const handleEdit = () => {
+        setIsEditing(true);
+
+    }
+    const handleSubmit = (updatedTodo) => {
+        updateTodo({...todo, content:updatedTodo.content, tags: updatedTodo.tags, icon: updatedTodo.icon});
+        setIsEditing(false);
+    }
+    if(isEditing){
+        return(
+            <TodoForm submitAction = {handleSubmit} todo={todo}/>
+
+        )
+    }
+    const Icon = iconMap[todo.icon]; 
+
+    const hoverEffects = 'hover:-translate-1 hover:shadow-lg hover:shadow-cyan-500/50 hover:border-cyan-500 hover:border-2 [&:hover>span>svg]:text-cyan-500'
+    return(
+        <div className={`bg-gray-100 rounded-lg p-2 my-3 h-20 sm:h-16 font-makh
+            select-none
+            flex justify-between
+            transition-all duration-300 ease-in-out 
+            ${todo.done ? 'opacity-50' : hoverEffects}`}
+            onDoubleClick={handleDoubleClick}>
+
+            <span className='flex items-center'>
+            <Icon className=' text-5xl mr-2 text-black'/>
+
+            <p className={`leading-none self-center text-lg sm:text-xl md:text-2xl ${todo.done ? 'line-through' : ''}`}>{todo.content}</p>
+            </span>
+            <span>
+                <p className={`text-lg sm:text-xl md:text-2xl inline align-middle text-cyan-600`}>{todo.tags}</p>
+                <button onClick={handleEdit} 
+                    className='h-2/3 sm:h-full font-makh text-lg sm:text-xl md:text-2xl px-2 ml-2 
+                        border-2 border-gray-300 rounded-xl
+                        hover:text-white hover:bg-black
+                        transition-all duration-300 ease-in-out cursor-pointer'
+                        >edit</button>
+            </span>
+               
+
+        </div>
+    )
+}
+
+export default Todo;
