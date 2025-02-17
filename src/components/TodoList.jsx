@@ -11,15 +11,7 @@ import ControlPanel from './ControlPanel';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 function TodoList() {
-//   const [todos2, setTodos2] = useState([
-//     {id: 1, content: 'Feed Vitiaz', icon: GiAxolotl, tags: 'home', done: true},
-//     {id: 2, content: 'Go for a walk', icon: GiBoots, tags: 'health', done: false},
-//     {id: 3, content: 'Eat a fruit', icon: GiFruitBowl, tags: '',done: false},
-//     {id: 4, content: 'Study for the midterm test', icon: FaShieldAlt, tags: 'uni',done: false},
-//     {id: 5, content: 'Do online midterm', icon: LuSword, tags: 'uni',done: false},
-//     {id: 6, content: 'Feed Vitiaz again', icon: GiAxolotl,tags: 'home', done: false},
-//     {id: 7, content: 'Pizza! Now!', icon: GiFullPizza ,tags: 'health', done: false},
-//   ]);
+
     const sampleTodos = [
             {id: 1, content: 'Feed Vitiaz', icon: "GiAxolotl", tags: 'home', done: true},
             {id: 2, content: 'Study for the midterm test', icon: "FaShieldAlt", tags: 'uni',done: false},
@@ -29,7 +21,6 @@ function TodoList() {
             {id: 6, content: 'Feed Vitiaz again', icon: "GiAxolotl",tags: 'home', done: false},
             {id: 7, content: 'Pizza! Now!', icon: "GiFullPizza" ,tags: 'health', done: false},
           ]
-    // const [localTodos, setLocalTodos] = useLocalStorage('todos', sampleTodos);
     const [todos, setTodos] = useLocalStorage('todos', sampleTodos);
 
   const toggleDone = (id) => {
@@ -49,12 +40,19 @@ function TodoList() {
         done: false};
     setTodos((prev) => [...prev, todo]);
   })
+
   const updateTodo = (updatedTodo) => {
     setTodos(todos.map(todo => {
         if (todo.id === updatedTodo.id){
             return updatedTodo
         }
         return todo; 
+    }));
+  }
+  const deleteTodo = (id) => {
+    
+    setTodos(todos.filter(todo => {
+        return todo.id !== id
     }));
   }
 
@@ -69,28 +67,47 @@ function TodoList() {
         );
     })
   }
-//   const sortTodos = (todos, mode = 'A') => { //N - no sort, A - ascending, D - descending
-//     if(isAscending){
-//         return todos.sort((a,b) => {a.tags.}).reverse();
-//     }
-//     return todos.sort()
-//   }
+
+  const [isSorting, setIsSorting] = useState(false);
+  
+  const sortTodos = (todos) => { 
+    return [...todos].sort((a,b) => {
+      if(!a.tags && !b.tags){
+        return 1;
+      } else if(!b.tags){
+        return -1;
+      } else if(!a.tags) {
+        return 0;
+      }
+      return a.tags.toLowerCase().localeCompare(b.tags.toLowerCase());
+    });
+  };
 
   const clearTodos = () => {
     setTodos([]);
   }
   const restartDemo = () => {
     setTodos(sampleTodos);
+    setIsSorting(false);
   }
 
 
-
+  console.log('sorting? :', isSorting);
+  console.log('todos? :', todos);
   return (
-    <div className='container m-auto w-14/15 lg:w-2/3 mt-4 mb-8'>
+    <div className='container m-auto w-14/15 lg:w-3/4 mt-4 mb-8 '>
         
-        <ControlPanel search={search} setSearch={setSearch} clearTodos={clearTodos} restartDemo={restartDemo}/>
-         {filterTodos(todos, search).map(todo => {
-            return <Todo key={todo.id} todo={todo} toggleDone ={toggleDone} updateTodo={updateTodo}/>
+        <ControlPanel 
+            search={search} 
+            setSearch={setSearch} 
+            clearTodos={clearTodos} 
+            restartDemo={restartDemo}
+            isSorting={isSorting}
+            setIsSorting={setIsSorting}
+            />
+        
+         {filterTodos((isSorting ? sortTodos(todos) : todos), search).map(todo => {
+            return <Todo key={todo.id} todo={todo} toggleDone ={toggleDone} updateTodo={updateTodo} deleteTodo={deleteTodo}/>
          })}
         
         <Divider /> 

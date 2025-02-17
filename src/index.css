@@ -5,6 +5,36 @@
 @theme{
   --font-makh: 'Monomakh', 'serif';
   --font-casto: 'Castoro Titling', 'serif';
+
+  --animate-swipeoff: swipeoff 1.3s ease-in;
+  @keyframes swipeoff {
+    0% {
+      /* transform: translateX(0%); */
+      
+    }
+    46% {
+      opacity:0;
+      height: 0px;
+
+
+    }
+    100% {
+      /* transform: translateX(-100%); */
+    }
+  }
+  --animate-frombelow: frombelow 0.5s ease-in;
+  @keyframes frombelow {
+    0% {
+      transform: translateY(100%);
+      opacity:0;
+
+    }
+    
+    100% {
+      transform: translateY(0%);
+      opacity:100;
+    }
+  }
 }
 
 @layer base{

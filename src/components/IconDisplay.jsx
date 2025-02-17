@@ -4,13 +4,14 @@ import iconMap from "../utility/IconMapping";
 
 
 
-function IconDisplay({setIcon, prevSelected = ''}) {
+function IconDisplay({setIcon, prevSelected = 'GiScrollUnfurled'}) {
   const items = [];
   const [selected, setSelected] = useState(prevSelected);
   for(const prop in iconMap){
     items.push({name: prop, component: iconMap[prop]})
   }
   const handleSelect = (e) => {
+    
     setIcon(e.currentTarget.value);
     setSelected(e.currentTarget.value);
 
