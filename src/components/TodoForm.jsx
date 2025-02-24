@@ -34,7 +34,7 @@ function TodoForm({submitAction, todo = {}, handleDelete = ()=>{}}) {
                     className='bg-white w-8/10 rounded-sm mb-1 md:mb-0 text-xl md:text-2xl p-2 font-makh grow'/>
                 <input 
                     type="text" 
-                    placeholder="Tags/categories"
+                    placeholder="Tag/category"
                     value={tags}
                     onChange={(e) => setTags(e.target.value)}
                     className='bg-white w-4/10 rounded-sm text-xl md:text-2xl md:ml-1 p-2 font-makh grow focus:shadow-cyan-500'/>

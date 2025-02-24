@@ -17,7 +17,8 @@ function Navbar() {
         </a>
         <button
                 className="px-4 py-2 m-1 bg-gray-600
-                           text-white rounded-lg font-makh text-2xl"
+                           text-white rounded-lg font-makh text-2xl
+                           hover:bg-gray-500 cursor-pointer"
                 onClick={() => setModalOpen(true)}
             >
                 About

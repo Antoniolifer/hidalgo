@@ -47,7 +47,7 @@ function Todo( {todo, toggleDone, updateTodo, deleteTodo}){
 
     const hoverEffects = 'hover:-translate-1 hover:shadow-lg hover:shadow-cyan-500/50 hover:border-cyan-500 hover:border-2 [&:hover>span>svg]:text-cyan-500'
     return(
-        <div className={`bg-gray-100 rounded-lg p-1 my-3 h-20 sm:h-16 font-makh
+        <div className={`bg-gray-100 rounded-lg p-1 my-2 h-20 sm:h-16 font-makh
             select-none
             flex justify-between
             transition-all duration-300 ease-in-out 

@@ -8,7 +8,7 @@ function Footer() {
     
     ">
         <p className="inline tracking-wide">
-            Project by Antoniolifer | Hidalgo Task Manager | February 2025
+            Project by Anton Serdiuk | Hidalgo Task Manager | February 2025
         </p>
     
     </div>

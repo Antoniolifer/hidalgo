@@ -10,6 +10,8 @@ import ControlPanel from './ControlPanel';
 
 import useLocalStorage from '../hooks/useLocalStorage';
 
+import {v4 as uuidv4} from 'uuid';
+
 function TodoList() {
 
     const sampleTodos = [
@@ -17,8 +19,8 @@ function TodoList() {
             {id: 2, content: 'Study for the midterm test', icon: "FaShieldAlt", tags: 'uni',done: false},
             {id: 3, content: 'Go for a walk', icon: "GiBoots", tags: 'health', done: false},
             {id: 4, content: 'Eat a fruit', icon: "GiFruitBowl", tags: '',done: false},
-            {id: 5, content: 'Do online midterm', icon: "LuSword", tags: 'uni',done: false},
-            {id: 6, content: 'Feed Vitiaz again', icon: "GiAxolotl",tags: 'home', done: false},
+            {id: 5, content: 'Do the midterm test', icon: "LuSword", tags: 'uni',done: false},
+            // {id: 6, content: 'Feed Vitiaz, again', icon: "GiAxolotl",tags: 'home', done: false},
             {id: 7, content: 'Pizza! Now!', icon: "GiFullPizza" ,tags: 'health', done: false},
           ]
     const [todos, setTodos] = useLocalStorage('todos', sampleTodos);
@@ -33,7 +35,7 @@ function TodoList() {
   }
   const addTodo = ((newTodoData) => {
     const todo = {
-        id: todos.length+1, 
+        id: uuidv4(), 
         content: newTodoData.content, 
         tags: newTodoData.tags,
         icon: newTodoData.icon, 
@@ -109,7 +111,7 @@ function TodoList() {
          {filterTodos((isSorting ? sortTodos(todos) : todos), search).map(todo => {
             return <Todo key={todo.id} todo={todo} toggleDone ={toggleDone} updateTodo={updateTodo} deleteTodo={deleteTodo}/>
          })}
-        
+        <p className='text-center font-makh text-gray-400 text-lg'>double-click a todo to mark it as complete.</p>
         <Divider /> 
 
         <TodoForm submitAction = {addTodo}/>
