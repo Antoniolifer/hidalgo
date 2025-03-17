@@ -16,7 +16,7 @@ function TodoForm({submitAction, todo = {}, handleDelete = ()=>{}}) {
             submitAction({content:text, tags, icon});
             setText('');
             setTags('');
-            setIcon('');
+            // setIcon('GiScrollUnfurled');
         }   
     }
     useEffect(()=> {
