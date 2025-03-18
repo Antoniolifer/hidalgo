@@ -14,8 +14,8 @@ const Modal = ({ isOpen, onClose, children }) => {
                         items-start justify-center h-100% 
                         bg-black/75" onClick={handleClick}>
             <div className="bg-gray-600 rounded-xl
-                            shadow-lg p-6 m-2 max-w-5xl top-15
-                            w-4/5 fixed overflow-auto overscroll-contain max-h-[700px]">
+                            shadow-lg p-6 m-2 max-w-5xl top-5 md:top-15
+                            w-4/5 absolute overflow-y-auto overscroll-none max-h-[90vh]">
                 <button
                     className="absolute top-2 right-2 text-2xl
                                text-gray-200 hover:text-gray-700
