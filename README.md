@@ -8,8 +8,13 @@ It was developed using **React** (with native React Context) and **Tailwind**.
 *Check out the live demo here:* [https://cool-shopper-project.netlify.app/](https://hidalgo-task-manager.netlify.app/)
 
 
+<p align="center">
+<img width="900" alt="main page showing the layout with many todos and the form" src="https://github.com/user-attachments/assets/ba8bc557-4f71-438d-88af-473a5c4d2f7b" />
+</p>
+
 ## Motivation
-Convenient, minimalistic user interface, bound together with smooth animations, responsive design and a unique theme, I developed this application to offer the user an engaging and satisfying experience in dealing with their daily plans. The goal was to create a fully fledged, finished, ready-to-use product.
+
+I developed this application to offer the user an engaging and satisfying experience in dealing with their daily plans. The goal was to create a fully fledged, finished, ready-to-use product. Convenient, minimalistic user interface, bound together with smooth animations, responsive design and a unique theme.
 
 I have created this app for expanding my practical knowledge of React.js, showcasing my developer skills, and more importantly because I was inspired to create a convenient, unique task manager that my friends and the wider internet community would enjoy using.
 
@@ -29,12 +34,17 @@ Quality-of-life & demo features:
 - clearing completed todos 
 - Restarting the demo
 
+<p align="center">
+<img width="900" alt="main page showing the layout with many todos and the form" src="https://github.com/user-attachments/assets/2fb38ab3-31de-4187-bd52-b0b622558a60" />
+</p>
+
+
 ## Technical Decisions
 #### Working around minimalism
 Tradeoff between minimalism and hypothetical "extra usefulness" from including extra information, such as timestamps, descriptions, photos, links. For a todo list, this amount of information seemed excessive, and would have negatively impacted the UX, without contributing much in return. The intended purpose of the application does not warrant that level of detalisation. 
 
 #### Theme 
-during the design phase, I wanted this project to stand out. I specifically chose a "simple", ubiquitous concept - a todo list, and I wanted to make it special and unique, in terms of how polished, convenient, and interesting it is, how it differs from other todo list applications.
+During the design phase, I wanted this project to stand out. I specifically chose a "simple", ubiquitous concept - a todo list, and I wanted to make it special and unique, in terms of how polished, convenient, and interesting it is, how it differs from other todo list applications.
 The name of _Hidalgo_ seemed like a perfect ironic twist to this seemingly trivial concept - setting todos for yourself. 
 
 #### Scaling considerations 
