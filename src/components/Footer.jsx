@@ -3,7 +3,7 @@
 function Footer() {
   return (
     <div className="text-gray-400 font-makh text-center text-lg md:text-xl my-4
-    mx-auto
+    mx-auto justify-self-end
     hover:text-cyan-200 transition-all duration-1000 ease-in-out
     
     ">

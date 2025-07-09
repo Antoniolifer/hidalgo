@@ -38,9 +38,14 @@
 }
 
 @layer base{
+  #root{
+    height:100vh;
+  }
   body{
     min-height: 100vh;  
     background-color: var(--color-gray-700);
-
+  }
+  button {
+    user-select: none;
   }
 }
