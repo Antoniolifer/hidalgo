@@ -1,8 +1,12 @@
 {
-  "name": "frontend",
+  "name": "hidalgo",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description":"lightweight todo list with search and tags and icon selection",
+  "author":"Anton Serdiuk Antoniolifer",
+  "keywords":["react","tailwind", "todolist", "demo", "icons"],
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
