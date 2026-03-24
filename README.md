@@ -5,7 +5,7 @@ _Hidalgo_ is a task manager, a todo list, focused on usability and providing a s
 
 It was developed using **React** (with native React Context) and **Tailwind**. 
 
-*Check out the live demo here:* [https://cool-shopper-project.netlify.app/](https://hidalgo-task-manager.netlify.app/)
+*Check out the live demo here:* [https://hidalgo-task-manager.netlify.app/](https://hidalgo-task-manager.netlify.app/)
 
 
 <p align="center">
