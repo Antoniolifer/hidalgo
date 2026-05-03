@@ -1,7 +1,7 @@
 # Hidalgo
 
 ## About the project
-_Hidalgo_ is a task manager, a todo list, focused on usability and providing a satisfying, polished experience.
+_Hidalgo_ is a daily task manager, focused on reusability and providing a satisfying, polished experience.
 
 It was developed using **React** (with native React Context) and **Tailwind**. 
 
@@ -41,7 +41,7 @@ Quality-of-life & demo features:
 
 ## Technical Decisions
 #### Working around minimalism
-Tradeoff between minimalism and hypothetical "extra usefulness" from including extra information, such as timestamps, descriptions, photos, links. For a todo list, this amount of information seemed excessive, and would have negatively impacted the UX, without contributing much in return. The intended purpose of the application does not warrant that level of detalisation. 
+Tradeoff between minimalism and hypothetical "extra usefulness" from including extra information, such as timestamps, descriptions, photos, links. For a todo list, this amount of information seemed excessive, and would have negatively impacted the UX, without contributing much in return. The intended design of the application does not warrant that level of verbosity. 
 
 #### Theme 
 During the design phase, I wanted this project to stand out. I specifically chose a "simple", ubiquitous concept - a todo list, and I wanted to make it special and unique, in terms of how polished, convenient, and interesting it is, how it differs from other todo list applications.
